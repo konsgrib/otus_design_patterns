@@ -1,4 +1,4 @@
-from math import sqrt,isclose
+from math import sqrt, isclose
 from typing import List
 
 
@@ -10,6 +10,6 @@ class Solver:
             return []
         x1 = (-b + sqrt(d)) / (2 * a)
         x2 = (-b - sqrt(d)) / (2 * a)
-        if isclose(x1,x2,rel_tol=1e-5):
+        if isclose(x1, x2, rel_tol=1e-5):
             return [x1]
         return [x1, x2]
