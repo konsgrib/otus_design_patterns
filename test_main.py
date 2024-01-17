@@ -45,6 +45,18 @@ def test_solve_a_four():
     with pytest.raises(ZeroDivisionError):
         Solver.solve(0, -2, 1)
 
+
+def test_solve_a_four2():
+    "Написать тест, который проверяет, что коэффициент a не может быть равен 0. В этом случае solve выбрасывает исключение."
+    with pytest.raises(ZeroDivisionError):
+        Solver.solve(2.220446049250313e-17, -2, 1)
+        
+def test_solve_a_four3():
+    "Написать тест, который проверяет, что коэффициент a не может быть равен 0. В этом случае solve выбрасывает исключение."
+    with pytest.raises(ZeroDivisionError):
+        Solver.solve(2.220446049250313e-14, -2, 1)
+
+
 def test_solve_is_numeric():
     with pytest.raises(TypeError):
         Solver.solve("q",1,2)
