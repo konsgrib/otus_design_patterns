@@ -40,21 +40,23 @@ def test_solve_three():
     assert isclose(result[0], -1.0, rel_tol=1e-5), "Root ins close to 1.0"
 
 
-def test_solve_a_four():
+def test_solve_a_four_a_equal_to_zero():
     "Написать тест, который проверяет, что коэффициент a не может быть равен 0. В этом случае solve выбрасывает исключение."
     with pytest.raises(ZeroDivisionError):
         Solver.solve(0, -2, 1)
+        
 
-
-def test_solve_a_four2():
-    "Написать тест, который проверяет, что коэффициент a не может быть равен 0. В этом случае solve выбрасывает исключение."
+def test_solve_a_four_a_less_than_epsilon():
+    "Тест, который проверяет, что коэффициент a может быть больше 0 но меньше машинного эпсилона. В этом случае solve выбрасывает исключение."
     with pytest.raises(ZeroDivisionError):
         Solver.solve(2.220446049250313e-17, -2, 1)
         
-def test_solve_a_four3():
-    "Написать тест, который проверяет, что коэффициент a не может быть равен 0. В этом случае solve выбрасывает исключение."
-    with pytest.raises(ZeroDivisionError):
-        Solver.solve(2.220446049250313e-14, -2, 1)
+        
+def test_solve_a_four3_a_bigeer_than_epsilon():
+    """Написать тест, который проверяет, что коэффициент a может быть близок к 0 но больше машинного эпсилона. 
+    В этом случае solve не выбрасывает исключение т.к. при положительном дискриминанте имеем два корня."""
+    result = Solver.solve(2.220446049250313e-14, -2, 1)
+    assert len(result) == 2, "Two roots are expected"
 
 
 def test_solve_is_numeric():
