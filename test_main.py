@@ -11,7 +11,6 @@ def test_solve_positive_discriminant():
 
 def test_solve_zero_discriminant():
     result = Solver.solve(1, -2, 1)
-    # assert len(result) == 2, "Two roots are expected"
     assert isclose(result[0], 1.0, rel_tol=1e-5), "Root is close to 1.0"
 
 
@@ -21,11 +20,13 @@ def test_solve_negative_discriminant():
 
 
 def test_solve_one():
+    "Написать тест, который проверяет, что для уравнения x^2+1 = 0 корней нет (возвращается пустой массив)"
     result = Solver.solve(1, 0, 1)
     assert result == [], "No roots are expected if discriminant is less than 0"
 
 
 def test_solve_two():
+    "Написать тест, который проверяет, что для уравнения x^2-1 = 0 есть два корня кратности 1 (x1=1, x2=-1)"
     result = Solver.solve(1, 0, -1)
     assert len(result) == 2, "Two roots are expected"
     assert isclose(result[0], 1.0, rel_tol=1e-5), "Root ins close to 1.0"
@@ -33,15 +34,29 @@ def test_solve_two():
 
 
 def test_solve_three():
+    "Написать тест, который проверяет, что для уравнения x^2+2x+1 = 0 есть один корень кратности 2 (x1= x2 = -1)."
     result = Solver.solve(1, 2, 1)
     assert len(result) == 1, "One root is expected"
     assert isclose(result[0], -1.0, rel_tol=1e-5), "Root ins close to 1.0"
 
 
 def test_solve_a_four():
+    "Написать тест, который проверяет, что коэффициент a не может быть равен 0. В этом случае solve выбрасывает исключение."
     with pytest.raises(ZeroDivisionError):
         Solver.solve(0, -2, 1)
 
 def test_solve_is_numeric():
     with pytest.raises(TypeError):
         Solver.solve("q",1,2)
+
+def test_solve_is_numeric_nan():
+    with pytest.raises(ValueError):
+        Solver.solve(1,float("NaN"),1)
+        Solver.solve(1,2,float("NaN"))
+        Solver.solve(float("NaN"),1,2)
+
+def test_solve_is_numeric_inf():
+    with pytest.raises(ValueError):
+        Solver.solve(1,float("inf"),1)
+        Solver.solve(1,2,float("inf"))
+        Solver.solve(float("inf"),1,2)
