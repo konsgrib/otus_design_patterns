@@ -51,18 +51,19 @@ def test_solve_a_four_a_equal_to_zero():
     with pytest.raises(ZeroDivisionError):
         s = Solver()
         result = s.solve(0, -2, 1)
-        
+
 
 def test_solve_a_four_a_less_than_epsilon():
     "Тест, который проверяет, что коэффициент a может быть больше 0 но меньше машинного эпсилона. В этом случае solve выбрасывает исключение."
     with pytest.raises(ZeroDivisionError):
         s = Solver()
         result = s.solve(2.220446049250313e-17, -2, 1)
-        
-        
+
+
 def test_solve_a_four3_a_bigeer_than_epsilon():
-    """Написать тест, который проверяет, что коэффициент a может быть близок к 0 но больше машинного эпсилона. 
-    В этом случае solve не выбрасывает исключение т.к. при положительном дискриминанте имеем два корня."""
+    """Написать тест, который проверяет, что коэффициент a может быть близок к 0 но больше машинного эпсилона.
+    В этом случае solve не выбрасывает исключение т.к. при положительном дискриминанте имеем два корня.
+    """
     s = Solver()
     result = s.solve(2.220446049250313e-14, -2, 1)
     assert len(result) == 2, "Two roots are expected"
@@ -71,18 +72,20 @@ def test_solve_a_four3_a_bigeer_than_epsilon():
 def test_solve_is_numeric():
     with pytest.raises(TypeError):
         s = Solver()
-        s.solve("q",1,2)
+        s.solve("q", 1, 2)
+
 
 def test_solve_is_numeric_nan():
     with pytest.raises(ValueError):
         s = Solver()
-        s.solve(1,float("NaN"),1)
-        s.solve(1,2,float("NaN"))
-        s.solve(float("NaN"),1,2)
+        s.solve(1, float("NaN"), 1)
+        s.solve(1, 2, float("NaN"))
+        s.solve(float("NaN"), 1, 2)
+
 
 def test_solve_is_numeric_inf():
     with pytest.raises(ValueError):
         s = Solver()
-        s.solve(1,float("inf"),1)
-        s.solve(1,2,float("inf"))
-        s.solve(float("inf"),1,2)
+        s.solve(1, float("inf"), 1)
+        s.solve(1, 2, float("inf"))
+        s.solve(float("inf"), 1, 2)

@@ -1,6 +1,7 @@
 from typing import List
 from math import sqrt, isclose, isnan, isinf
 
+
 class Solver:
     def __init__(self):
         self.machine_epsilon = self._get_machine_epsilon()
