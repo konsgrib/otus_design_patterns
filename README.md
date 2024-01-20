@@ -1,57 +1,67 @@
 
 
-Homework #1
-
-Class Solver and its methods description:
-
-_get_machine_epsilon:
-        Private method to calculate the machine epsilon, which is the smallest
-        floating-point number that when added to 1.0 gives a result different
-        from 1.0.
-
-_not_acceptable_numeric:
-        Private method to check if any of the coefficients a, b, or c is NaN
-        (Not a Number) or infinite.
 
 
-solve:
-        Static method to solve the quadratic equation ax^2 + bx + c = 0.
-        Args:
-            a (float): Coefficient of x^2.
-            b (float): Coefficient of x.
-            c (float): Constant term.
-        Returns:
-            List[float]: List of solutions to the equation. If the equation has
-            no real solutions, an empty list is returned.
-        Raises:
-            ZeroDivisionError: If the coefficient 'a' is less than the machine
-            epsilon (smallest floating-point number).
-            ValueError: If any of the coefficients a, b, or c is NaN or infinite.
+#Homework #1
+
+###Для запуска юнит тестов
+Установить зависимости из requirements.txt ```pip install -r requirements.txt```
+Запкстить тесты: ```pytest -vs```
+
+###Описание работы класса Solver
+Класс Solver  имеет метод "solve" для нахождения корней квадратного уравнения вида: ax^2 + bx + c = 0.
+Метод solve имеет следующие сценарии:
+Если коэффициент a равен 0, то уравнение не является квадратным и метод solve выбрасывает исключение ValueError.
+Если коэффициент a меньше машинного эпсилона, то метод solve выбрасывает исключение ValueError.
+Если коэффициенты a, b, c не являются числовыми значениями, то метод solve выбрасывает исключение TypeError.
+Если коэффициенты a, b, c равны NaN или бесконечности, то метод solve выбрасывает исключение ValueError.
+Если дискриминант больше нуля, то метод solve возвращает два корня.
+Если дискриминант равен нулю, то метод solve возвращает один корень.
+Если дискриминант меньше нуля, то метод solve возвращает пустой список.
+Если коэффициент a близок к нулю, но больше машинного эпсилона, то метод solve возвращает два корня.
+
+Также имеется вспомогательные методы
+Метод "_not_acceptable_numeric" для проверки на допустимость числовых значений коэффициентов a, b, c.
+Метод "_get_machine_epsilon" возвращает машинное эпсилон, используемое для сравнения чисел с плавающей точкой.
 
 
-
-Tests description:
+Описание сценариев тестирования:
     test_solve_positive_discriminant:
+    Проверка того, что при значении дискриминанта больше нуля уравнение будет иметь два корня
 
     test_solve_zero_discriminant:
+    При значении дискриминанта равном нулю, уравнение имеет один корень
 
     test_solve_negative_discriminant:
+    Функция должна вернуть пустой список, если дискриминант меньше нуля и, соответственно, уравнение не имеет корней
 
     test_solve_one:
+    "Написать тест, который проверяет, что для уравнения x^2+1 = 0 корней нет (возвращается пустой массив)
 
     test_solve_two:
+    Написать тест, который проверяет, что для уравнения x^2-1 = 0 есть два корня кратности 1 (x1=1, x2=-1)
 
     def test_solve_three:
+    Написать тест, который проверяет, что для уравнения x^2+2x+1 = 0 есть один корень кратности 2 (x1= x2 = -1).
 
     test_solve_a_four_a_equal_to_zero:
+    Написать тест, который проверяет, что коэффициент a не может быть равен 0. В этом случае solve выбрасывает исключение.
 
     test_solve_a_four_a_less_than_epsilon:
+    Тест, который проверяет, что коэффициент a может быть больше 0 но меньше машинного эпсилона. В этом случае solve выбрасывает исключение.
 
     test_solve_a_four3_a_bigeer_than_epsilon:
+    Написать тест, который проверяет, что коэффициент a может быть близок к 0 но больше машинного эпсилона. 
+    В этом случае solve не выбрасывает исключение т.к. при положительном дискриминанте имеем два корня.
 
+    
     test_solve_is_numeric:
+    Проверка на то, что при типе значений коэффициентов a, b, c, отличном от числовых функция solve выбрасывает исключение типа TypeError.
 
+
+    Проверка на то, что при значении коэффициентов a, b, c, равных NaN или бесконечности, функция solve выбрасывает исключение ValueError.
     test_solve_is_numeric_nan:
 
     test_solve_is_numeric_inf:
+
 
