@@ -3,6 +3,9 @@ from math import sqrt, isclose, isnan, isinf
 
 
 class Solver:
+    def __init__(self):
+        self.machine_epsilon = self._get_machine_epsilon()
+
     def _get_machine_epsilon(self):
         machine_epsilon = 1.0
         while 1.0 + machine_epsilon != 1.0:
@@ -16,11 +19,10 @@ class Solver:
             return True
         return False
 
-    @classmethod
-    def solve(cls, a: float, b: float, c: float) -> List[float]:
-        if 0 < cls._get_machine_epsilon(cls) > a:
+    def solve(self, a: float, b: float, c: float) -> List[float]:
+        if 0 < self.machine_epsilon > a:
             raise ZeroDivisionError("Value is less than machine epsilon")
-        if cls._not_acceptable_numeric(cls, a, b, c):
+        if self._not_acceptable_numeric(a, b, c):
             raise ValueError("Incorrect value")
         d = (b * b) - (4 * a * c)
         if d < 0:
