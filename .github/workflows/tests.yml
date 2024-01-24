@@ -21,10 +21,12 @@ jobs:
                     pip install -r ./tests/requirements.txt
             -   name:   Run flake8
                 run:
-                    cd ./homework_1  
+                    cd ./homework_1;
                     flake8 main.py
             -   name: Run black
-                run: black .
+                run:
+                    pwd; 
+                    black .
             -   name: Run tests
                 run:
                     cd ./homework_1 
