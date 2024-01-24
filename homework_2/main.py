@@ -45,7 +45,11 @@ class FlyingObject(ABC):
 
 class SpaceShip(FlyingObject):
     def fire_torpedo(self):
-        torpedo = Torpedo(self.position, self.velocity, self.mover, self.rotator)
+        torpedo = Torpedo(
+            self.position,
+            self.velocity,
+            self.mover,
+            self.rotator)
         return torpedo
 
 

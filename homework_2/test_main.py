@@ -53,7 +53,7 @@ def test_mover_move():
         position[1] + distance * mover.speed * math.sin(angle),
     )
     actual_new_position = mover.move(position, velocity, distance)
-    
+
     assert actual_new_position == expected_new_position
 
 
