@@ -18,7 +18,8 @@ jobs:
             -   name:   cd test dir
                 run:
                     pwd;
-                    cd tests
+                    cd ./tests;
+                    pwd
             -   name:   Install dependencies
                 run:
                     python -m pip install --upgrade pip
