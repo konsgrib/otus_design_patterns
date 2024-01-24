@@ -21,13 +21,13 @@ jobs:
                     pip install -r ./tests/requirements.txt
             -   name:   Run flake8
                 run:
-                    cd ./homework_1;
-                    flake8 main.py
+                    flake8 ./homework_1/main.py
+                    flake8 ./homework_2/main.py
             -   name: Run black
                 run:
-                    cd ./homework_1;
-                    black .
+                    black ./homework_1
+                    black ./homework_2
             -   name: Run tests
                 run:
-                    cd ./homework_1;
-                    pytest -vs .
+                    pytest -vs ./homework_1
+                    pytest -vs ./homework_2
