@@ -19,7 +19,8 @@ jobs:
                 run:
                     pwd;
                     cd ./tests;
-                    pwd
+                    pwd;
+                    ls -lA
             -   name:   Install dependencies
                 run:
                     python -m pip install --upgrade pip
