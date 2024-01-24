@@ -23,7 +23,7 @@ jobs:
                 run:    |
                     black ./homework_1;
                     black ./homework_2
-            -   name: Run tests
-                run:    |
-                    pytest -vs ./homework_1;
-                    pytest -vs ./homework_2
+            -   name: Run tests homework_1
+                run:    pytest -vs ./homework_1
+            -   name: Run tests homework_2
+                run:    pytest -vs ./homework_2
