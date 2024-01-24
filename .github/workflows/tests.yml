@@ -25,9 +25,9 @@ jobs:
                     flake8 main.py
             -   name: Run black
                 run:
-                    pwd; 
+                    cd ./homework_1;
                     black .
             -   name: Run tests
                 run:
-                    cd ./homework_1 
+                    cd ./homework_1;
                     pytest -vs .
