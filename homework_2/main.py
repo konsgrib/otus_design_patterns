@@ -14,17 +14,17 @@ class Movable:
 
 
 class Rotatable:
-    def __init__(self, angle=0):
-        if angle < 0 or angle > 360:
-            raise ValueError("Angle must be between 0 and 360 degrees")
-        self.angle = angle
+    def __init__(self):
+        self.angle = 0
 
     def rotate(self, rotation):
-        self.angle += rotation
-        if self.angle > 360:
-            self.angle = 0
-        elif self.angle < 0:
-            self.angle = 360
+        new_angle = self.angle + rotation
+        if new_angle > 360:
+            self.angle = new_angle - 360
+        elif new_angle < 0:
+            self.angle = 360 + new_angle
+        else:
+            self.angle = new_angle
         return self.angle
 
 

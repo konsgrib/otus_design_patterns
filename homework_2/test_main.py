@@ -6,6 +6,12 @@ def test_spaceship_rotate():
     spaceship = Spaceship([0, 0], [1, 1])
     assert spaceship.rotate(45) == 45
     assert spaceship.rotate(40) == 85
+    assert spaceship.rotate(400) == 125
+    assert spaceship.rotate(40) == 165
+    assert spaceship.rotate(40) == 205
+    assert spaceship.rotate(-40) == 165
+    assert spaceship.rotate(-40) == 125
+    assert spaceship.rotate(-40) == 85
 
 
 def test_spaceship_init():
