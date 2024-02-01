@@ -1,57 +1,29 @@
-from abc import ABC
 import math
 
-
-class Mover:
-    def __init__(self, speed):
-        self.speed = speed
-
-    def move(self, position, velocity, distance):
-        angle = math.atan2(velocity[1], velocity[0])
-        new_position = (
-            position[0] + distance * self.speed * math.cos(angle),
-            position[1] + distance * self.speed * math.sin(angle),
-        )
-
-        return new_position
-
-
-class Rotator:
-    def __init__(self, rotation):
-        self.rotation = rotation
-
-    def rotate(self, angle):
-        self.rotation = (self.rotation + angle) % 360
-
-        return self.rotation
-
-
-class FlyingObject(ABC):
-    def __init__(self, position, velocity, mover, rotator):
+class Movable:
+    def __init__(self, position, velocity):
         self.position = position
         self.velocity = velocity
-        self.mover = mover
-        self.rotator = rotator
 
-    def move_forward(self, distance):
-        self.position = self.mover.move(self.position, self.velocity, distance)
+    def move(self):
+        self.position = [self.position[0] + self.velocity[0], self.position[1] + self.velocity[1]]
+
+
+class Rotatable:
+    def __init__(self, angle=0):
+        self.angle = angle
 
     def rotate(self, angle):
-        self.rotation = self.rotator.rotate(angle)
-
-    def destroy(self):
-        self.status = "Destroyed"
+        self.angle = (self.angle + angle) % 360
+        return self.angle
 
 
-class SpaceShip(FlyingObject):
-    def fire_torpedo(self):
-        torpedo = Torpedo(
-            self.position,
-            self.velocity,
-            self.mover,
-            self.rotator)
-        return torpedo
+class Spaceship(Movable, Rotatable):
+    def __init__(self, position, velocity):
+        Movable.__init__(self, position, velocity)
+        Rotatable.__init__(self)
 
 
-class Torpedo(FlyingObject):
-    pass
+class Torpedo(Movable):
+    def __init__(self, position, velocity):
+        super().__init__(position, velocity)
