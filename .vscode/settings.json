@@ -1,3 +1,5 @@
 {
-    "CodeGPT.Autocomplete.enabled": true
+    "CodeGPT.Autocomplete.enabled": true,
+    "editor.formatOnSave": true
+
 }
