@@ -1,4 +1,6 @@
 from collections import deque
+from exception_handler import ExceptionHandler
+
 
 class EventLoop:
     def __init__(self):
@@ -9,8 +11,8 @@ class EventLoop:
 
     def run(self):
         while self.ready:
-            event = self.ready.popleft()
+            func, event = self.ready.popleft()
             try:
-                event[0]()
+                func()
             except Exception as e:
-                print("ERROR: ", type(e), "Event type: ", event[1])
+                ExceptionHandler().handle(event, e)

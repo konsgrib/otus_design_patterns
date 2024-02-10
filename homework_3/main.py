@@ -1,5 +1,10 @@
 import random
-from event_fabric import (EventA, EventB, EventC, EventD,)
+from event_fabric import (
+    EventA,
+    EventB,
+    EventC,
+    EventD,
+)
 from event_loop import EventLoop
 
 

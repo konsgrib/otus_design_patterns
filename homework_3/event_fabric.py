@@ -5,7 +5,7 @@ from abc import ABC
 
 class AbstractEvent(ABC):
     def run(self):
-        n = random.randint(0, 10)
+        n = random.randint(0, 5)
         exceptions = [ZeroDivisionError, KeyError, IndexError]
         list_length = len(exceptions) - 1
         time.sleep(1)
@@ -13,7 +13,7 @@ class AbstractEvent(ABC):
             print(f"Event type: {self.__class__.__name__} called, NORMAL EVENT")
             return
         raise exceptions[random.randint(0, 2)]
-    
+
     def __str__(self) -> str:
         return f"Event type: {self.__class__.__name__}"
 
