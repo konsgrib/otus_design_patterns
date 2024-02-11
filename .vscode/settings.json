@@ -1,5 +1,8 @@
 {
     "CodeGPT.Autocomplete.enabled": true,
-    "editor.formatOnSave": true
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.flake8",
+        "editor.formatOnSave": true,
+      }
 
 }

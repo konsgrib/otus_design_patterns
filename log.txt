@@ -1,0 +1,14 @@
+Time: 2024-02-12 01:21:06.830933, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7fa09393beb0>}
+Time: 2024-02-12 01:23:07.557470, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7f666a9241f0>}
+Time: 2024-02-12 01:25:36.582957, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7f14aa7b0190>}
+Time: 2024-02-12 01:26:48.967418, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7febe1f4c1c0>}
+Time: 2024-02-12 01:29:50.420114, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7f1425fae080>}
+Time: 2024-02-12 01:31:30.635797, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7ff491d25ed0>}
+Time: 2024-02-12 01:33:26.564693, Object: _mock_return_value, Error: ValueError, Params: {'_mock_return_value': sentinel.DEFAULT, '_mock_parent': None, '_mock_name': None, '_mock_new_name': '', '_mock_new_parent': None, '_mock_sealed': False, '_spec_class': None, '_spec_set': None, '_spec_signature': None, '_mock_methods': None, '_spec_asyncs': [], '_mock_children': {}, '_mock_wraps': None, '_mock_delegate': None, '_mock_called': False, '_mock_call_args': None, '_mock_call_count': 0, '_mock_call_args_list': [], '_mock_mock_calls': [], 'method_calls': [], '_mock_unsafe': False, '_mock_side_effect': None}
+Time: 2024-02-12 01:33:26.585402, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7fca7810e0b0>}
+Time: 2024-02-12 01:34:20.122742, Object: _mock_return_value, Error: ValueError, Params: {'_mock_return_value': sentinel.DEFAULT, '_mock_parent': None, '_mock_name': None, '_mock_new_name': '', '_mock_new_parent': None, '_mock_sealed': False, '_spec_class': None, '_spec_set': None, '_spec_signature': None, '_mock_methods': None, '_spec_asyncs': [], '_mock_children': {}, '_mock_wraps': None, '_mock_delegate': None, '_mock_called': False, '_mock_call_args': None, '_mock_call_count': 0, '_mock_call_args_list': [], '_mock_mock_calls': [], 'method_calls': [], '_mock_unsafe': False, '_mock_side_effect': None}
+Time: 2024-02-12 01:36:16.766960, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7f31ca2f3f40>}
+Time: 2024-02-12 01:38:02.466887, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7ff5e1dd5c60>}
+Time: 2024-02-12 01:38:40.554392, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7fbb14c0dc60>}
+Time: 2024-02-12 01:38:56.748794, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7f1564b09cc0>}
+Time: 2024-02-12 01:39:14.757218, Object: cmd, Error: Exception, Params: {'cmd': <command.RepeaterCommand object at 0x7f267e21dc60>}
