@@ -60,7 +60,7 @@ def test_check_fuel_command(spaceship):
     assert spaceship.fuel_level == 10
 
 
-def test_check_fuel_command(spaceship):
+def test_check_fuel_command_trying_to_spend_more_than_exists(spaceship):
     check = CheckFuelComamnd(spaceship, 15)
     with pytest.raises(CommandException):
         check.execute()
