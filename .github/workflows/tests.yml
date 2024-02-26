@@ -29,3 +29,5 @@ jobs:
                 run:    pytest -vs ./homework_2
             -   name: Run tests homework_3
                 run:    pytest -vs ./homework_3
+            -   name: Run tests homework_4
+                run:    pytest -vs ./homework_4
